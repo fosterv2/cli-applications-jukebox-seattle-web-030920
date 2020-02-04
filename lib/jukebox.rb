@@ -35,7 +35,7 @@ def play(songs)
     end
   end
   if input.to_i > 0 && input.to_i < songs.length
-    puts "Playing #{songs[input - 1]}"
+    puts "Playing #{songs[input.to_i - 1]}"
   elsif name
     puts "Playing #{name}"
   else
