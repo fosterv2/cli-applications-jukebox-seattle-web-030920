@@ -27,9 +27,17 @@ end
 
 def play(songs)
   puts "Please enter a song name or number:"
-  input = gets.strip.to_i
-  if input > 0 && input < songs.length
+  input = gets.strip
+  name = nil
+  songs.each do |song|
+    if input == song
+      name = song
+    end
+  end
+  if input.to_i > 0 && input.to_i < songs.length
     puts "Playing #{songs[input - 1]}"
+  elsif name
+    puts "Playing #{name}"
   else
     puts "Invalid input, please try again"
   end
